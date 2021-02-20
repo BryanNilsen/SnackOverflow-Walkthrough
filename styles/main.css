@@ -1,0 +1,45 @@
+body {
+    color: rgb(40, 40, 40);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4D1717;
+    color: white;
+}
+
+nav {
+    display: flex;
+    margin: auto;
+    max-width: 800px;
+}
+
+nav>img {
+    padding: 1em;
+    width: 300px;
+}
+
+
+.navlinks {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+
+.navlinks>a {
+    color: white;
+    font-size: 1.3em;
+    opacity: .7;
+    list-style-type: none;
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+}
+
+.navlink:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
