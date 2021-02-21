@@ -29,7 +29,11 @@ const render = (menuItemsArray) => {
     const contentTarget = document.querySelector("main")
 
     // render menuItemsHTML representation to DOM
-    contentTarget.innerHTML = menuItemsHTML
+    contentTarget.innerHTML = `
+        <section class="menu__wrapper">
+            ${menuItemsHTML}
+        </section>
+    `
 }
 
 

@@ -1,7 +1,7 @@
 /**
  * Represents a menu item
  * @param {Object} menuObj - a menu item object
- * @returns {String} - HTML Representation of menu item
+ * @returns {String} - HTML Representation of menu item object
 */
 
 export const MenuItemCard = (menuObj) => {

@@ -29,7 +29,11 @@ const render = (locationsArray) => {
     const contentTarget = document.querySelector("main")
 
     // render locationsHTML representation to DOM
-    contentTarget.innerHTML = locationsHTML
+    contentTarget.innerHTML = `
+        <section class="locations__wrapper">
+            ${locationsHTML}
+        </section>
+    `
 }
 
 
@@ -42,7 +46,7 @@ const eventHub = document.querySelector("body")
 
 /**
  * Listen for "click" event and IF the element clicked
- * is the locations-nav link, then call the MenusPage component
+ * is the locations-nav link, then call the LocationsPage component
  */
 eventHub.addEventListener("click", event => {
     if (event.target.id === "locations-nav") {
