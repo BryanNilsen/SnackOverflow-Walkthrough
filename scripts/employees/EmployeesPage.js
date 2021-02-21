@@ -27,7 +27,7 @@ export const EmployeesPage = () => {
 */
 const render = (employeesArray) => {
     // Iterate employees array and make HTML string representation for each
-    let employeesHTML = employeesArray.map(item => EmployeeCard(item)).join("")
+    let employeesHTML = employeesArray.map(employee => EmployeeCard(employee)).join("")
     // Get reference to DOM element in which to insert employeesHTML representation
     const contentTarget = document.querySelector("main")
 

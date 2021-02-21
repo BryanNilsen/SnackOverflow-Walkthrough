@@ -1,0 +1,18 @@
+{
+  "reviews": [
+    {
+      "date": "2021-02-21T22:21:24.399Z",
+      "rating": 5,
+      "text": "test",
+      "name": "test",
+      "id": 1
+    },
+    {
+      "date": "2021-02-21T22:42:52.190Z",
+      "rating": 4,
+      "text": "This place was astounding! Great service!!",
+      "name": "Bryan",
+      "id": 2
+    }
+  ]
+}

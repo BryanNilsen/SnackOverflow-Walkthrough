@@ -1,0 +1,31 @@
+.reviews__wrapper {
+    margin-right: 2.5em;
+}
+
+.review__card {
+    width: 100%;
+}
+
+/* FORM STYLES */
+fieldset {
+    border: none;
+    margin: 0 0 1em 0;
+    padding: 0;
+}
+
+
+/* ICONS */
+.star {
+    color: crimson
+}
+
+.star--fade {
+    opacity: .5;
+}
+
+/* BUTTONS */
+.btn--delete {
+    background-color: crimson;
+    color: white;
+    border: 1px solid rgb(40, 40, 40);
+}

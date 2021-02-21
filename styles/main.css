@@ -1,3 +1,5 @@
+@import "./reviews.css";
+
 body {
     color: rgb(40, 40, 40);
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -44,10 +46,14 @@ nav>img {
     text-decoration: underline;
 }
 
+.content__wrapper {
+    margin: auto;
+    max-width: 700px;
+}
+
 .main__wrapper {
     margin: auto;
     display: flex;
-    max-width: 700px;
 }
 
 main {
@@ -59,7 +65,6 @@ main {
     display: flex;
     margin: auto;
     padding: 1em 0;
-    max-width: 700px;
     justify-content: space-between;
 }
 
