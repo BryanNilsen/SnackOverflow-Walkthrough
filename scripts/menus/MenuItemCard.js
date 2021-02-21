@@ -4,9 +4,9 @@
  * @returns {String} - HTML Representation of menu item
 */
 
-export const MenuItem = (menuObj) => {
+export const MenuItemCard = (menuObj) => {
     return `
-    <div class="menuItem">
+    <div class="menuItemCard">
         <div>
             <h3>${menuObj.name} - ${menuObj.price}</h3>
             <p>${menuObj.description}</p>
