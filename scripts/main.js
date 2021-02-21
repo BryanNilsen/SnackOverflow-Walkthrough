@@ -1,4 +1,4 @@
-import { MenusPage } from "./MenusPage.js"
+import { MenusPage } from "./menus/MenusPage.js"
 
 
 MenusPage()
