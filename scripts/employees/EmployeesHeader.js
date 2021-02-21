@@ -2,6 +2,8 @@
  * @file Responsible for rendering all of the Employee header components
 */
 
+import { EmployeesFilter } from "./EmployeesFilter.js"
+
 
 
 export const EmployeesHeader = () => {
@@ -9,7 +11,6 @@ export const EmployeesHeader = () => {
     const titleTarget = document.getElementById("page-title")
     titleTarget.innerHTML = "Employees"
 
-    // Set page filter - (currently empty)
-    const filterTarget = document.getElementById("page-filter")
-    filterTarget.innerHTML = ""
+    // Set page filter
+    EmployeesFilter()
 }

@@ -5,6 +5,9 @@ import { getEmployees } from "./EmployeesDataManager.js"
 import { EmployeeCard } from "./EmployeeCard.js"
 import { EmployeesHeader } from "./EmployeesHeader.js"
 
+// create "state" variables to hold all employees
+let allEmployees = []
+
 /**
  * Responsible for getting employees and passing them
  * into the render function
@@ -12,7 +15,8 @@ import { EmployeesHeader } from "./EmployeesHeader.js"
 export const EmployeesPage = () => {
     getEmployees()
         .then((employeeData) => {
-            render(employeeData)
+            allEmployees = employeeData
+            render(allEmployees)
         })
 }
 
@@ -36,7 +40,6 @@ const render = (employeesArray) => {
 }
 
 
-
 /**
  * eventHub gets reference to the body element in index.html
  * will be used for responding to user-generated events
@@ -51,5 +54,19 @@ eventHub.addEventListener("click", event => {
     if (event.target.id === "employees-nav") {
         EmployeesPage()
         EmployeesHeader()
+    }
+})
+
+/**
+ * Listen for custom "EmployeePositionSelected" event and render
+ * filtered employees
+ */
+eventHub.addEventListener("EmployeePositionSelected", event => {
+    const selectedPosition = event.detail.selectedPosition
+    if (selectedPosition !== 0) {
+        const filteredEmployees = allEmployees.filter(employee => employee.positionId === selectedPosition)
+        render(filteredEmployees)
+    } else {
+        render(allEmployees)
     }
 })

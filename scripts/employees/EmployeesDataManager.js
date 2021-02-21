@@ -11,5 +11,13 @@ export const getEmployees = () => {
             return employeesFromAPI
         })
 }
+export const getPositions = () => {
+    return fetch("https://snackoverflow-api.herokuapp.com/positions")
+        .then(response => response.json())
+        .then(positionsFromAPI => {
+            console.log(positionsFromAPI)
+            return positionsFromAPI
+        })
+}
 
 

@@ -40,7 +40,7 @@ const eventHub = document.querySelector("body")
 
 /**
  * Listen for "change" event and IF the element changed
- * is the menu-select link, then get the selected option value
+ * is the location-select link, then get the selected option value
  * and dispatch that in a custom event
  */
 eventHub.addEventListener("change", (changeEvent) => {

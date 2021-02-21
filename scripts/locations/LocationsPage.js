@@ -62,7 +62,7 @@ eventHub.addEventListener("click", event => {
 
 /**
  * Listen for custom "LocationStateSelected" event and render
- * filtered menu items
+ * filtered locations
  */
 eventHub.addEventListener("LocationStateSelected", event => {
     const selectedState = event.detail.selectedState
