@@ -58,3 +58,7 @@ eventHub.addEventListener("click", event => {
         ReviewForm()
     }
 })
+
+eventHub.addEventListener("reviewsStateChanged", event => {
+    ReviewsPage()
+})

@@ -4,7 +4,13 @@
  * when data has been updated
 */
 
+
 const eventHub = document.querySelector("body")
+/**
+ * Responsible for dispatching a custom event whenever the
+ * state of the review data has changed; i.e, POST/DELETE
+ * Allows other components GET and re-render the data
+ */
 const dispatchStateChangeEvent = () => {
     const reviewsStateChangedEvent = new CustomEvent("reviewsStateChanged")
     eventHub.dispatchEvent(reviewsStateChangedEvent)
