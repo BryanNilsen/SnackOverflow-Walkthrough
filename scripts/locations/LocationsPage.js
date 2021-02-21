@@ -28,7 +28,7 @@ export const LocationsPage = () => {
 */
 const render = (locationsArray) => {
     // Iterate locations array and make HTML string representation for each
-    let locationsHTML = locationsArray.map(item => LocationCard(item)).join("")
+    let locationsHTML = locationsArray.map(location => LocationCard(location)).join("")
 
     // Get reference to DOM element in which to insert locationsHTML representation
     const contentTarget = document.querySelector("main")
