@@ -3,7 +3,7 @@
 */
 
 import { getMenuItems } from "./MenusDataManager.js"
-import { MenuItem } from "./MenuItem.js"
+import { MenuItemCard } from "./MenuItemCard.js"
 
 /**
  * Responsible for getting menu items and passing them
@@ -21,21 +21,15 @@ export const MenusPage = () => {
  * rendering HTML representation to DOM
  * @param {array} menuItemsArray - an array of menu items
 */
-const render = (menuItemsArrary) => {
+const render = (menuItemsArray) => {
     // Iterate menu items array and make HTML string representation for each
-    let menuItemsHTML = menuItemsArrary.map(item => MenuItem(item)).join("")
+    let menuItemsHTML = menuItemsArray.map(item => MenuItemCard(item)).join("")
 
     // Get reference to DOM element in which to insert menuItemsHTML representation
     const contentTarget = document.querySelector("main")
 
     // render menuItemsHTML representation to DOM
-    contentTarget.innerHTML = `
-    <section class="menu__container">
-        <section class="menu__list">
-            ${menuItemsHTML}
-        </section>
-    </section>
-    `
+    contentTarget.innerHTML = menuItemsHTML
 }
 
 
