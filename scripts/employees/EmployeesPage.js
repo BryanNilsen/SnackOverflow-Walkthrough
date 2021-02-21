@@ -3,6 +3,7 @@
 */
 import { getEmployees } from "./EmployeesDataManager.js"
 import { EmployeeCard } from "./EmployeeCard.js"
+import { EmployeesHeader } from "./EmployeesHeader.js"
 
 /**
  * Responsible for getting employees and passing them
@@ -49,5 +50,6 @@ const eventHub = document.querySelector("body")
 eventHub.addEventListener("click", event => {
     if (event.target.id === "employees-nav") {
         EmployeesPage()
+        EmployeesHeader()
     }
 })

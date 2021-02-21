@@ -9,6 +9,7 @@ export const EmployeeCard = (employeeObj) => {
     <div class="employeeCard">
         <div>
             <h3>${employeeObj.firstName} ${employeeObj.lastName}</h3>
+            <p>${employeeObj.position.name} in ${employeeObj.location.city}</p>
         </div>
     </div>
     `
