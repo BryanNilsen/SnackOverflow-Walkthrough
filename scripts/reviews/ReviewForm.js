@@ -32,7 +32,7 @@ export const ReviewForm = () => {
                 <textarea id="review--text" name="text" rows="3"></textarea>
             </label>
         </fieldset>
-        <button id="review--submit">Submit</button>
+        <button id="review--submit" class="btn">Submit</button>
     </form>
     </section>
     `
@@ -62,19 +62,24 @@ eventHub.addEventListener("click", event => {
         event.preventDefault()
 
         // get values from form and store in newReview object
-        const nameInput = document.getElementById("review--name").value
-        const ratingInput = document.getElementById("review--rating").value
-        const textInput = document.getElementById("review--text").value
+        const nameInput = document.getElementById("review--name")
+        const ratingInput = document.getElementById("review--rating")
+        const textInput = document.getElementById("review--text")
         const reviewDate = new Date()
 
         const newReview = {
             date: reviewDate,
-            rating: parseInt(ratingInput),
-            text: textInput,
-            name: nameInput
+            rating: parseInt(ratingInput.value),
+            text: textInput.value,
+            name: nameInput.value
         }
 
         // post newReview object to API
         postReview(newReview)
+
+        // reset form inputs
+        nameInput.value = ""
+        ratingInput.value = "5"
+        textInput.value = ""
     }
 })

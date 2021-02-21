@@ -6,6 +6,11 @@
     width: 100%;
 }
 
+.review__footer {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* FORM STYLES */
 fieldset {
     border: none;
@@ -24,8 +29,12 @@ fieldset {
 }
 
 /* BUTTONS */
-.btn--delete {
-    background-color: crimson;
+.btn {
+    background-color: rgb(114, 114, 114);
     color: white;
     border: 1px solid rgb(40, 40, 40);
+}
+
+.btn:hover {
+    background-color: crimson;
 }
