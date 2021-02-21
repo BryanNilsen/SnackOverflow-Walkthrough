@@ -4,6 +4,10 @@
 
 import { getLocations } from "./LocationsDataManager.js"
 import { LocationCard } from "./LocationCard.js"
+import { LocationsHeader } from "./LocationsHeader.js"
+
+// create "state" variables to hold all locations
+let allLocations = []
 
 /**
  * Responsible for getting locations and passing them
@@ -12,7 +16,8 @@ import { LocationCard } from "./LocationCard.js"
 export const LocationsPage = () => {
     getLocations()
         .then((locationData) => {
-            render(locationData)
+            allLocations = locationData
+            render(allLocations)
         })
 }
 
@@ -51,5 +56,20 @@ const eventHub = document.querySelector("body")
 eventHub.addEventListener("click", event => {
     if (event.target.id === "locations-nav") {
         LocationsPage()
+        LocationsHeader()
+    }
+})
+
+/**
+ * Listen for custom "LocationStateSelected" event and render
+ * filtered menu items
+ */
+eventHub.addEventListener("LocationStateSelected", event => {
+    const selectedState = event.detail.selectedState
+    if (selectedState !== "0") {
+        const filteredLocations = allLocations.filter(location => location.state === selectedState)
+        render(filteredLocations)
+    } else {
+        render(allLocations)
     }
 })
