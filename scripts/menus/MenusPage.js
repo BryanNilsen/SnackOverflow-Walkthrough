@@ -4,6 +4,11 @@
 
 import { getMenuItems } from "./MenusDataManager.js"
 import { MenuItemCard } from "./MenuItemCard.js"
+import { MenusHeader } from "./MenusHeader.js"
+
+// create "state" variables to hold all menu items
+let allMenuItems = []
+
 
 /**
  * Responsible for getting menu items and passing them
@@ -12,7 +17,8 @@ import { MenuItemCard } from "./MenuItemCard.js"
 export const MenusPage = () => {
     getMenuItems()
         .then((menuData) => {
-            render(menuData)
+            allMenuItems = menuData
+            render(allMenuItems)
         })
 }
 
@@ -50,5 +56,20 @@ const eventHub = document.querySelector("body")
 eventHub.addEventListener("click", event => {
     if (event.target.id === "menus-nav") {
         MenusPage()
+        MenusHeader()
+    }
+})
+
+/**
+ * Listen for custom "MenuCategorySelected" event and render
+ * filtered menu items
+ */
+eventHub.addEventListener("MenuCategorySelected", event => {
+    const menuId = event.detail.menuId
+    if (menuId !== 0) {
+        const filteredMenuItems = allMenuItems.filter(item => item.menuId === menuId)
+        render(filteredMenuItems)
+    } else {
+        render(allMenuItems)
     }
 })
