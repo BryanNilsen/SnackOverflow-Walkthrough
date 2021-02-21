@@ -2,7 +2,7 @@
  * Represents a menu item
  * @param {Object} menuObj - a menu item object
  * @returns {String} - HTML Representation of menu item
-**/
+*/
 
 export const MenuItem = (menuObj) => {
     return `
