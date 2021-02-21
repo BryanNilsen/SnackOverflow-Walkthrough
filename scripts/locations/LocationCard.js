@@ -1,7 +1,7 @@
 /**
  * Represents a location
  * @param {Object} locationObj - a location object
- * @returns {String} - HTML Representation of location
+ * @returns {String} - HTML Representation of location object
 */
 
 export const LocationCard = (locationObj) => {
