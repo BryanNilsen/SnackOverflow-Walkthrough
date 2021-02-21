@@ -1,5 +1,5 @@
 /**
- * @file Responsible for rendering all of the Menu header components
+ * @file Responsible for rendering all of the Location header components
 */
 
 import { LocationsFilter } from "./LocationsFilter.js"
