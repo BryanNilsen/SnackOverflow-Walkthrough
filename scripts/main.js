@@ -1,1 +1,4 @@
-console.log("Welcome to Snack Overflow!")
+import { MenusPage } from "./MenusPage.js"
+
+
+MenusPage()
